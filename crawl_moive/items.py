@@ -11,4 +11,5 @@ import scrapy
 class CrawlMoiveItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    moive_url = scrapy.Field()
+    moive_name = scrapy.Field()
