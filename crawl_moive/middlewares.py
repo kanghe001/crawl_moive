@@ -15,4 +15,5 @@ class CrawlMoiveUserAgent(UserAgentMiddleware):
     #    self.agents =
 
     def process_request(self, request, spider):
+        print "kanghe: " + agents[0]
         request.headers.setdefault('User-Agent', random.choice(agents))
