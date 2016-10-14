@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import os
 # Scrapy settings for crawl_moive project
 #
 # For simplicity, this file contains only settings considered important or
@@ -23,7 +24,7 @@ agents = [
 ITEM_PIPELINES = {
     "crawl_moive.pipelines.CrawlMoivePipeline": 100
 }
-DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 1
 COOKIES_ENABLED = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent

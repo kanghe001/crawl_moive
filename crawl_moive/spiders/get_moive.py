@@ -1,22 +1,19 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from crawl_moive.items import CrawlMoiveItem
 
 
 class GetMoiveSpider(scrapy.Spider):
     name = "get_moive"
     start_urls = (
-        'http://www.bilibili.com/video/av6623541/',
+        'http://lol.qq.com/v/',
     )
 
     def __init__(self):
         super(GetMoiveSpider, self).__init__(self)
-
-        # use any browser you wish
-        self.browser = webdriver.Firefox()
-
-    def __del__(self):
-
-        self.browser.close()
+        pass
 
     def parse(self, response):
-        moive = response.css(".bilibili-")
+        item = CrawlMoiveItem()
+        item['moive_url'] = response.css(".top-big-video source::attr(src)").extract()[1]
+        yield item
